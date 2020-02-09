@@ -1,0 +1,12 @@
+version: "2"
+services:
+  oss:
+    container_name: oss
+    image: registry.gitlab.com/tonywangcn/telegram-bot:prod
+    working_dir: /app
+    privileged: True
+    env_file: prod.env
+    ports:
+      - "8000:8000"
+    # command: ["tail", "-f", "/dev/null"]
+    command: bash -c "python main.py"
