@@ -73,7 +73,8 @@ def upload_file_api():
 	r = upload_file(file, encode_data)
 	if r.status_code < 400:
 		return jsonify({'data': SITE_URL.format(file) })
-	return jsonify({"data": "error"}), 404
+	r.content
+	return jsonify({"data": r.content}), 404
 
 if __name__ == '__main__':
 	app.run(debug=True,host='0.0.0.0', port=8000)
