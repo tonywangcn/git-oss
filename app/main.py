@@ -55,6 +55,10 @@ def upload_file(file_name, data):
 def extract_filename_and_type(url):
 	url = urljoin(url, urlparse(url).path)
 	file = url.split("/")[-1]
+	if len(file.split(".")) < 2:
+		file_name = gen_md5(url)
+		file_type = "jpg"
+		return file_name, file_type
 	file_name = file.split(".")[0]
 	file_type = file.split(".")[1]
 	return file_name, file_type
