@@ -76,7 +76,7 @@ def upload_file_api():
 		return jsonify({"data": "file exists!"}), 403
 	r = upload_file(file, encode_data)
 	if r.status_code < 400:
-		return jsonify({'data': SITE_URL.format(file) })
+		return jsonify({'data': file })
 	r.content
 	return jsonify({"data": r.content}), 404
 
