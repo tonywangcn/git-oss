@@ -22,7 +22,7 @@ HEADER = {
 
 URL = GIT_API_HOST + "/repos/" + OWNER + "/" + REPO + "/contents" + FILE_PATH
 
-SITE_URL = SITE_URL + OWNER + "/Pincong/master" + FILE_PATH
+SITE_URL = SITE_URL + OWNER + "/"+ REPO +"/master" + FILE_PATH
 
 def gen_md5(data):
 	return hashlib.md5(data.encode()).hexdigest()
